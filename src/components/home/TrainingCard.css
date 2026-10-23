@@ -1,0 +1,176 @@
+.tcard {
+  position: relative;
+  height: 100%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  transition:
+    border-color 0.3s var(--ease),
+    transform 0.3s var(--ease);
+}
+
+.tcard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease);
+}
+
+.tcard:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-2px);
+}
+
+.tcard:hover::before {
+  transform: scaleX(1);
+}
+
+.tcard__link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  height: 100%;
+  padding: 1.5rem 1.5rem 1.35rem;
+}
+
+.tcard__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tcard__index {
+  color: var(--accent);
+}
+
+.tcard__category {
+  color: var(--muted);
+}
+
+.tcard__title {
+  font-size: 1.3rem;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  max-width: 18ch;
+}
+
+.tcard__summary {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  max-width: 40ch;
+}
+
+.tcard__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.9rem;
+  margin-top: auto;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--line-soft);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.tcard__meta span:not(.tcard__go) {
+  position: relative;
+}
+
+.tcard__meta span:not(.tcard__go) + span:not(.tcard__go)::before {
+  content: "";
+  position: absolute;
+  left: -0.5rem;
+  top: 50%;
+  width: 2px;
+  height: 2px;
+  background: currentColor;
+  transform: translateY(-50%);
+}
+
+.tcard__go {
+  margin-left: auto;
+  font-size: 0.9rem;
+  color: var(--accent);
+  transition: transform 0.3s var(--ease);
+}
+
+.tcard:hover .tcard__go {
+  transform: translateX(4px);
+}
+
+/* larger, inverted lead card */
+
+.tcard--large {
+  background: #121513;
+  border-color: rgba(243, 240, 232, 0.18);
+}
+
+.tcard--large::before {
+  height: 3px;
+}
+
+.tcard--large .tcard__link {
+  gap: 1.1rem;
+  padding: clamp(1.75rem, 4vw, 3rem);
+}
+
+.tcard--large .tcard__title {
+  font-size: clamp(1.9rem, 4.4vw, 3.4rem);
+  max-width: 24ch;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.tcard--large .tcard__summary {
+  max-width: 52ch;
+  font-size: 1rem;
+}
+
+.tcard--large .tcard__meta {
+  padding-top: 1.3rem;
+}
+
+.tcard__watermark {
+  position: absolute;
+  right: -0.5rem;
+  bottom: -2.6rem;
+  font-family: var(--font-mono);
+  font-size: clamp(9rem, 22vw, 16rem);
+  font-weight: 500;
+  line-height: 1;
+  color: rgba(243, 240, 232, 0.05);
+  pointer-events: none;
+  user-select: none;
+}
+
+.tcard--large .tcard__link {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tcard,
+  .tcard::before,
+  .tcard__go {
+    transition: none;
+  }
+
+  .tcard:hover {
+    transform: none;
+  }
+}

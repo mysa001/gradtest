@@ -1,0 +1,112 @@
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 0.85rem 1.3rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.22s var(--ease),
+    color 0.22s var(--ease),
+    border-color 0.22s var(--ease),
+    transform 0.18s var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(1px) scale(0.994);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.btn__icon {
+  display: inline-flex;
+  transition: transform 0.28s var(--ease);
+}
+
+.btn__icon svg {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+.btn:hover .btn__icon {
+  transform: translateX(3px);
+}
+
+.btn--lg {
+  padding: 1.05rem 1.6rem;
+  font-size: 0.98rem;
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: #f6fbf9;
+}
+
+.btn--primary:hover {
+  background: #095d53;
+}
+
+.btn--outline {
+  border-color: var(--line-strong);
+  color: var(--ink);
+  background: transparent;
+}
+
+.btn--outline:hover {
+  border-color: var(--ink);
+  background: rgba(18, 21, 19, 0.04);
+}
+
+.btn--ghost {
+  padding-inline: 0.2rem;
+  color: var(--ink);
+  background: transparent;
+}
+
+.btn--ghost:hover {
+  color: var(--accent);
+}
+
+.surface-ink .btn--primary {
+  background: var(--accent-bright);
+  color: #04231f;
+}
+
+.surface-ink .btn--primary:hover {
+  background: #35d3c2;
+}
+
+.surface-ink .btn--outline {
+  border-color: rgba(243, 240, 232, 0.32);
+  color: var(--paper);
+}
+
+.surface-ink .btn--outline:hover {
+  border-color: var(--paper);
+  background: rgba(243, 240, 232, 0.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .btn__icon {
+    transition: none;
+  }
+}

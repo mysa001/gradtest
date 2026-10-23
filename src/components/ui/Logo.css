@@ -1,0 +1,47 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--ink);
+}
+
+.logo--paper {
+  color: var(--paper);
+}
+
+.logo__mark {
+  display: grid;
+  place-items: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  background: var(--ink);
+  color: var(--accent-bright);
+}
+
+.logo--paper .logo__mark {
+  background: var(--paper);
+  color: var(--accent);
+}
+
+.logo__mark svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.logo__word {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 1.12rem;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.logo__tag {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  padding: 0.18rem 0.3rem;
+  border: 1px solid currentColor;
+  opacity: 0.6;
+  transform: translateY(-0.3rem);
+}

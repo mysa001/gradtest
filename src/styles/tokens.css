@@ -1,0 +1,47 @@
+:root {
+  color-scheme: light;
+
+  --paper: #f3f0e8;
+  --paper-deep: #e9e4d8;
+  --surface: #fbf9f3;
+
+  --ink: #121513;
+  --ink-soft: #1c211e;
+  --muted: #5c635d;
+
+  --line: rgba(18, 21, 19, 0.14);
+  --line-soft: rgba(18, 21, 19, 0.07);
+  --line-strong: rgba(18, 21, 19, 0.32);
+
+  --accent: #0b7568;
+  --accent-bright: #14b8a6;
+  --accent-soft: #d9ece7;
+
+  --signal: #c2761c;
+  --danger: #a8432c;
+
+  --radius: 3px;
+  --container: 1240px;
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --header-h: 4.5rem;
+
+  --font-sans: "Space Grotesk", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+  --ease: cubic-bezier(0.22, 0.7, 0.2, 1);
+  --shadow-lift: 0 20px 44px -30px rgba(18, 21, 19, 0.55);
+}
+
+.surface-ink {
+  --ink: #f3f0e8;
+  --ink-soft: #e7e3d9;
+  --muted: #9aa39c;
+  --line: rgba(243, 240, 232, 0.16);
+  --line-soft: rgba(243, 240, 232, 0.08);
+  --line-strong: rgba(243, 240, 232, 0.34);
+  --surface: #171b19;
+  --accent: #14b8a6;
+  --accent-soft: #123a35;
+  background-color: #121513;
+  color: #f3f0e8;
+}
